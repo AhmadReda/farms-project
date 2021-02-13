@@ -1,0 +1,39 @@
+<div class="part-title">
+  <span>Lorem, ipsum dolor.</span>
+  <span></span>
+</div>
+
+<div class="items-for-you">
+  <div class="row">
+    <div class="col-lg-3" *ngFor="let item of items">
+      <div class="item-look">
+        <div class="item-look-img">
+          <a routerLink="/view-product-details/10">
+            <img src="{{ item.img }}" class="img-fluid" />
+          </a>
+        </div>
+        <div class="item-look-desc">
+          <a routerLink="/view-product-details/10">{{ item.link }}</a>
+          <h6>
+            {{ item.priceFrom }} - {{ item.priceTo }} /
+            <span>{{ item.type }}</span>
+          </h6>
+          <p>{{ item.quant }} {{ item.type }} (MIN.Order)</p>
+        </div>
+      </div>
+      <!-- <mat-card> 
+        <a routerLink="/view-product-details/10">
+          <img mat-card-image src="{{ item.img }}" class="img-fluid" />
+        </a>
+        <mat-card-footer>
+          <a routerLink="/view-product-details/10">{{ item.link }}</a>
+          <h6>
+            {{ item.priceFrom }} - {{ item.priceTo }} /
+            <span>{{ item.type }}</span>
+          </h6>
+          <p>{{ item.quant }} {{ item.type }} (MIN.Order)</p>
+        </mat-card-footer>
+      </mat-card> -->
+    </div>
+  </div>
+</div>

@@ -1,0 +1,97 @@
+.show-market {
+    display: flex;
+    align-items: center;
+    padding: 17px;
+    height: 465px;
+    background: #fff;
+    border: 1px solid #aaa;
+  }
+  .show-market .show-market-list {
+    background: #fff;
+    margin: 0;
+    width: 30%;
+    height: 100%;
+    padding: 10px 0px 10px 0px;
+    position: relative;
+  }
+  
+  .show-market .show-market-list h6 {
+    border-bottom: 2px solid #f4f4f4;
+    margin: 13px 0;
+    padding-bottom: 10px;
+  }
+  .show-market .show-market-list li {
+    margin: 0px 0px 9px 5px;
+    z-index: 110;
+  }
+  .show-market .show-market-list > li:hover {
+    box-shadow: 0 0 1px 0px #aaa;
+  }
+  .show-market .show-market-list > li:hover .market-sub-menu {
+    opacity: 1;
+    visibility: visible;
+  }
+  .show-market .show-market-list .market-sub-menu {
+    position: absolute;
+    transition: all 0.4s ease;
+    right: -400px;
+    background: #fff;
+    top: 52px;
+    width: 400px;
+    z-index: 10;
+    height: 375px;
+    max-height: 375px;
+    overflow: auto;
+    opacity: 0;
+    visibility: hidden;
+    box-shadow: 0px 0px 4px 0px #aaa;
+    padding: 10px;
+  }
+  .show-market .show-market-list li a {
+    display: block;
+    text-decoration: none;
+    color: #333333;
+    font-size: 15px;
+    padding: 5px;
+    position: relative;
+  }
+  .show-market .show-market-list li a img {
+    background: #ddd;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    vertical-align: middle;
+    margin-right: 3px;
+  }
+  .show-market .show-market-list li i {
+    font-size: 11px;
+    position: absolute;
+    right: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .market-slide {
+    width: 100%;
+    padding-left: 10px;
+  }
+  
+  .market-slide,
+  .market-slide .slide,
+  .market-slide .slide .carousel-inner,
+  .market-slide .slide .carousel-inner .carousel-item,
+  .market-slide .slide .carousel-inner .carousel-item img {
+    height: 100%;
+  }
+  
+  ::ng-deep .top-slide {
+    margin-top: 50px !important;
+  }
+  ::ng-deep .top-slide .slide .product-img {
+    height: 200px !important;
+  }
+  
+  /* .modal.show {
+    display: block;
+    transition: all 0.5s ease;
+  } */
+  

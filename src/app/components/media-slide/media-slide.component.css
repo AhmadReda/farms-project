@@ -1,0 +1,19 @@
+h4 {
+  font-size: 30px;
+  background: #fff;
+  padding: 5px;
+  border: 1px solid #aaa;
+  border-radius: 10px;
+}
+
+.slide {
+  background: #fff;
+  padding: 10px;
+  border: 1px solid #aaa;
+}
+.slide .product-img {
+  height: 400px;
+}
+.slide .product-img img {
+  height: 100%;
+}

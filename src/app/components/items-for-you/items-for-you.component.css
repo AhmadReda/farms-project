@@ -1,0 +1,46 @@
+.part-title {
+  display: flex;
+  position: relative;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.part-title span:first-child {
+  font-size: 20px;
+  font-weight: 900;
+}
+.part-title span:last-child {
+  position: absolute;
+  width: 80%;
+  height: 7px;
+  background: #dcdee3;
+  right: 0;
+  border-radius: 7px;
+}
+.item-look {
+  background: #fff;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+.item-look:hover .item-look-desc a {
+  text-decoration: underline !important;
+}
+.item-look-desc {
+  padding: 10px;
+}
+.item-look-desc a {
+  color: #333;
+}
+.item-look-desc h6 {
+  font-weight: bolder;
+  font-size: 19px;
+}
+.item-look-desc h6 span {
+  color: #777;
+  font-size: 17px;
+  font-weight: 500;
+}
+.item-look-desc p {
+  color: #777;
+  font-size: 15px;
+}
