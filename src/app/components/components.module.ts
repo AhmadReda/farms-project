@@ -10,6 +10,7 @@ import { RouterModule } from '@angular/router';
 import { MediaSlideComponent } from './media-slide/media-slide.component';
 import { FormsModule } from '@angular/forms';
 
+import { NgxPaginationModule } from 'ngx-pagination'
 
 import {MatCardModule} from '@angular/material/card';
 import {MatBadgeModule} from '@angular/material/badge';
@@ -22,6 +23,7 @@ import {MatIconModule} from '@angular/material/icon';
   declarations: [NavbarComponent, FooterComponent, PartItemsComponent, SlideShowItemsComponent, ItemsForYouComponent, MediaSlideComponent],
   imports: [
     // PagesModule,
+    NgxPaginationModule,
     MatIconModule,
     MatBadgeModule,
     MatCardModule,

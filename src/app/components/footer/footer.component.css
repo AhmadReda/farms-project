@@ -3,11 +3,11 @@ footer {
   color: #fff;
   padding: 40px 0;
 }
-h3 {
+h4 {
   position: relative;
   margin: 0 0 0 13px;
 }
-h3::before {
+h4::before {
   position: absolute;
   content: "";
   width: 5px;

@@ -8,10 +8,12 @@
 .part-title span:first-child {
   font-size: 20px;
   font-weight: 900;
+  display: block;
+  width: 30%;
 }
 .part-title span:last-child {
   position: absolute;
-  width: 80%;
+  width: 70%;
   height: 7px;
   background: #dcdee3;
   right: 0;
@@ -21,10 +23,18 @@
   background: #fff;
   margin-bottom: 20px;
   border-radius: 5px;
+  border-radius: 10px;
 }
 .item-look:hover .item-look-desc a {
   text-decoration: underline !important;
 }
+.item-look .item-look-img,
+.item-look .item-look-img img{
+  border-radius: 10px 10px 0 0;
+}
+/* .item-look:hover .item-look-desc a img{
+  border-radius: 10x 10px 0 0 ;
+} */
 .item-look-desc {
   padding: 10px;
 }
@@ -43,4 +53,32 @@
 .item-look-desc p {
   color: #777;
   font-size: 15px;
+}
+
+
+.buttons-controls{
+  margin: 13px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.item-number button{
+  color: #fff;
+  background: #2199e8;
+  border: none;
+  outline: none;
+  padding: 4px 9px;
+}
+
+.item-number input{
+  padding: 5px;
+  width: 45px;
+  border: none;
+  outline: none;
+  text-align: center;
+}
+
+
+::ng-deep .ngx-pagination{
+  padding-left: 0;
 }

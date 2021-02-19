@@ -21,7 +21,7 @@ export class SlideShowItemsComponent implements OnInit {
     loop: true,
     mouseDrag: true,
     touchDrag: false,
-    autoplay:true,
+    // autoplay:true,
     pullDrag: false,
     dots: false,
     navSpeed: 700,
@@ -30,10 +30,10 @@ export class SlideShowItemsComponent implements OnInit {
       0: {
         items: 1
       },
-      400: {
-        items: 3
+      340: {
+        items: 2
       },
-      740: {
+      470: {
         items: 3
       },
       940: {

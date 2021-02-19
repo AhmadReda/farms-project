@@ -5,6 +5,7 @@
     height: 465px;
     background: #fff;
     border: 1px solid #aaa;
+    border-radius: 10px;
   }
   .show-market .show-market-list {
     background: #fff;
@@ -73,6 +74,7 @@
   .market-slide {
     width: 100%;
     padding-left: 10px;
+    border-radius: 10px;
   }
   
   .market-slide,
@@ -83,6 +85,10 @@
     height: 100%;
   }
   
+  .market-slide .slide .carousel-inner .carousel-item img {
+    border-radius: 10px;
+  }
+  
   ::ng-deep .top-slide {
     margin-top: 50px !important;
   }
@@ -90,8 +96,16 @@
     height: 200px !important;
   }
   
-  /* .modal.show {
-    display: block;
-    transition: all 0.5s ease;
-  } */
+/******************* media *********************/
+@media(max-width:991px){
+  .show-market{
+    margin-bottom: 20px;
+  }
+}
+@media (max-width:576px){
+  .container-fluid .row .col-lg-8{
+    display: none;
+  }
+}
+/******************* media *********************/
   

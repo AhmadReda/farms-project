@@ -5,7 +5,7 @@
 
 <div class="items-for-you">
   <div class="row">
-    <div class="col-lg-3" *ngFor="let item of items">
+    <div class="col-lg-3 col-sm-6" *ngFor="let item of items |paginate: { itemsPerPage: itemsPerPage, currentPage: currenpg }">
       <div class="item-look">
         <div class="item-look-img">
           <a routerLink="/view-product-details/10">
@@ -21,19 +21,14 @@
           <p>{{ item.quant }} {{ item.type }} (MIN.Order)</p>
         </div>
       </div>
-      <!-- <mat-card> 
-        <a routerLink="/view-product-details/10">
-          <img mat-card-image src="{{ item.img }}" class="img-fluid" />
-        </a>
-        <mat-card-footer>
-          <a routerLink="/view-product-details/10">{{ item.link }}</a>
-          <h6>
-            {{ item.priceFrom }} - {{ item.priceTo }} /
-            <span>{{ item.type }}</span>
-          </h6>
-          <p>{{ item.quant }} {{ item.type }} (MIN.Order)</p>
-        </mat-card-footer>
-      </mat-card> -->
+    </div>
+  </div>
+  <div class="buttons-controls">
+    <pagination-controls (pageChange)="currenpg = $event"></pagination-controls>
+    <div class="item-number">
+      <button (click)="dec()"><i class="fas fa-minus"></i></button>
+      <input type="text" [value]="itemsPerPage">
+      <button (click)="inc()"><i class="fas fa-plus"></i></button>
     </div>
   </div>
 </div>
