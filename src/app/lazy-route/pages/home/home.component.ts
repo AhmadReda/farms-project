@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+// declare var $:any;
 
 @Component({
   selector: 'app-home',
@@ -8,10 +9,21 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 })
 export class HomeComponent implements OnInit {
 
+  slideUp:boolean = false;
   constructor() { }
 
   ngOnInit(): void {
+    // $(".market-sub-menu").slideUp();
+    // $(document).on("click",".slide-down a",() =>{
+    //   $(".slide-down a").next().slideDown();
+    // })
   }
+
+
+  // toClick(event: any){
+  //   console.log(event.target);
+  //   this.slideUp = !this.slideUp
+  // }
 
 
   isShow() {

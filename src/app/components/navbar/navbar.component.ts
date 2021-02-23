@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SearchService } from '../../services/search.service';
-import { CartServiceService } from '../../services/cart-service.service'
+import { CartServiceService } from '../../services/cart-service.service';
 import { ThrowStmt } from '@angular/compiler';
 
 @Component({
@@ -9,24 +9,19 @@ import { ThrowStmt } from '@angular/compiler';
   styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent implements OnInit {
-  constructor(private searchService: SearchService , private cartService:CartServiceService) {}
+  constructor(
+    private searchService: SearchService,
+    private cartService: CartServiceService
+  ) {}
 
-  numberItem!:number;
+  numberItem!: number;
   ngOnInit(): void {
-    // console.log(this.cartService.getNum());
-
-    this.cartService.getNum().subscribe(data =>{
-      // console.log(data);
-
-      if(data != undefined){
-        this.numberItem = data
+    this.cartService.getNum().subscribe((data) => {
+      if (data != undefined) {
+        this.numberItem = data;
       }
-      console.log(this.numberItem);
-      
-    })
+    });
   }
-
-  
 
   searchItems = [
     {
@@ -137,23 +132,21 @@ export class NavbarComponent implements OnInit {
 
   dataSearch: any = [];
   clear: String = '';
-  inputVal:any;
-  isEmpty:boolean = false;
+  inputVal: any;
+  isEmpty: boolean = false;
   getValueInput(input: any) {
     if (input.value.length > 0) {
       this.inputVal = input.value;
-      // console.log(this.inputVal);
       this.searchItems.forEach((data) => {
-        if (input.value == data['name'] || data['name'].match(this.inputVal)){
+        if (input.value == data['name'] || data['name'].match(this.inputVal)) {
           this.dataSearch.push(data);
           this.searchService.sendMsg(this.dataSearch);
         }
       });
       input.value = this.clear;
-      this.dataSearch = []
-    }
-    else {
-      this.isEmpty = true
+      this.dataSearch = [];
+    } else {
+      this.isEmpty = true;
     }
   }
 }

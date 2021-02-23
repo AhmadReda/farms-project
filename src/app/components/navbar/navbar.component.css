@@ -128,6 +128,10 @@ input {
 .navbar .navbar-nav .nav-item {
   position: relative;
 }
+.navbar-toggler{
+  background: #fff;
+  border-color: #fff;
+}
 .navbar .navbar-nav .nav-item:hover .sub-menu {
   top: 110%;
   opacity: 1;
