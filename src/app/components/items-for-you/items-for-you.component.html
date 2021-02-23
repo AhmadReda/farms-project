@@ -27,7 +27,7 @@
     <pagination-controls (pageChange)="currenpg = $event"></pagination-controls>
     <div class="item-number">
       <button (click)="dec()"><i class="fas fa-minus"></i></button>
-      <input type="text" [value]="itemsPerPage">
+      <input type="text" [value]="itemsPerPage" disabled>
       <button (click)="inc()"><i class="fas fa-plus"></i></button>
     </div>
   </div>
