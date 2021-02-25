@@ -8,12 +8,12 @@ declare var $:any;
 export class AppComponent implements OnInit{
 
   ngOnInit(){
-    $("#bun").click(function(){
-      console.log("eslam");
-    })
-    $(document).ready(function(){
-      $("#exampleModal").modal("show");
-    })
+    // $("#bun").click(function(){
+    //   console.log("eslam");
+    // })
+    // $(document).ready(function(){
+    //   $("#exampleModal").modal("show");
+    // })
   }
   title = 'line-one';
 }
