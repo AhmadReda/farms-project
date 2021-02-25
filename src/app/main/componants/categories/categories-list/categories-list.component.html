@@ -1,4 +1,8 @@
-<div class="container pt-4">
+<div class="component-loader" (errorCallback)="getData()" [errorMessage]="Error"
+  component-loader [componentError]="loadingError" [componentLoading]="loading">
+
+
+  <div class="container pt-4">
     <app-items-for-you [items]="allItems"></app-items-for-you>
     <div class="row">
         <div class="col-lg-6">
@@ -16,4 +20,5 @@
             <app-slide-show-items [owlSlide]="owlSlideOne"></app-slide-show-items>
         </div>
     </div>
+</div>
 </div>

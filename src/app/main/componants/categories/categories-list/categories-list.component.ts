@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CategoriesListComponent implements OnInit {
 
+  loadingError = false;
+  loading = false;
+  Error = 'Error'
   constructor() { }
 
   ngOnInit(): void {
@@ -96,9 +99,9 @@ export class CategoriesListComponent implements OnInit {
       },
     ];
     ///////////////// data bind to <app-items-for-you> ////////////////////
-  
+
     ///////////////// data bind to <app-slide-show-items> ////////////////////
-  
+
     owlSlideOne = [
       {
         img:"assets/images/slide-img1.png",
@@ -132,5 +135,7 @@ export class CategoriesListComponent implements OnInit {
       },
     ];
     ///////////////// data bind to <app-slide-show-items> ////////////////////
-  
+
+    getData(){}
+
 }
