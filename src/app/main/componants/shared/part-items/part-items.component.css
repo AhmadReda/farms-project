@@ -1,0 +1,136 @@
+.part-title {
+    display: flex;
+    position: relative;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .part-title span:first-child {
+    font-size: 20px;
+    font-weight: 900;
+    display: block;
+    width: 30%;
+  }
+  .part-title span:last-child {
+    position: absolute;
+    width: 70%;
+    height: 7px;
+    background: #dcdee3;
+    right: 0;
+    border-radius: 7px;
+  }
+  .part-items {
+    display: flex;
+    background: #fff;
+  }
+  .verified-link .verified-item img {
+    width: 160px !important;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+  .verified-item {
+    padding-left: 17px;
+    padding-top: 24px;
+  }
+  .verified-link .verified-item span {
+    font-size: 12px;
+    font-weight: 800;
+    color: blue;
+  }
+  .verified-link .verified-item span i {
+    margin-right: -4px;
+  }
+  .verified-link {
+    display: block;
+    width: 25%;
+    position: relative;
+  }
+  .item img {
+    width: 80px;
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+  }
+  .panar-item,
+  .item,
+  .verifide-link {
+    width: 25%;
+    position: relative;
+  }
+  .panar-item {
+    position: relative;
+  }
+  .panar-item h5 {
+    position: absolute;
+    top: 0;
+    padding: 35px;
+    font-size: 23px;
+    color: #fff;
+  }
+  .panar-item a {
+    top: 228px !important;
+    left: 41px !important;
+    background: #ddd;
+    padding: 10px;
+    border-radius: 20px;
+    font-size: 14px;
+    color: #fff;
+  }
+  .item h5,
+  .verified-link h5 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+  }
+  .item p,
+  .verified-link p {
+    margin: 0;
+    font-size: 14px;
+    color: #666;
+  }
+  .panar-item a {
+    position: absolute;
+    top: 215px !important;
+    left: 30px !important;
+  }
+  .item div {
+    border: 1px solid #f4f4f4;
+    padding: 20px;
+    position: relative;
+    height: 50%;
+  }
+  
+  
+  
+  /*************************** media ***********************/
+  @media(min-width:768px) and (max-width:991px){
+    .verified-link,
+    .panar-item{
+      width: 35%;
+    }
+    .item{
+      width: 30%;
+    }
+  }
+  @media(min-width:768px) and (max-width:1199px){
+    .panar-item a{
+      top: 190px !important;
+    }
+  }
+  
+  @media(max-width:767px){
+    .panar-item,
+    .verified-link{
+      height: 300px;
+      width: 50%;
+    }
+  }
+  @media(max-width:425px){
+    .verified-link{
+      display: none;
+    }
+    .panar-item{
+      width: 100%;
+    }
+  }
+  /*************************** media ***********************/

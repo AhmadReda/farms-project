@@ -1,0 +1,118 @@
+<div>
+    <section class="top-nav">
+      <div class="logo">
+        <a routerLink="/">
+          <img src="../../../assets/images/logo.png" />
+        </a>
+      </div>
+      <div class="in-media">
+        <div class="form-top-nav">
+          <form>
+            <div></div>
+            <input type="text" placeholder="what are you looking for..." #input />
+            <a
+              routerLink="/search-item"
+              type="submit"
+              class="search-btn"
+              (click)="getValueInput(input)"
+            >
+              <i class="fas fa-search"></i> search
+            </a>
+          </form>
+        </div>
+        <div class="user-part d-md-flex d-sm-none">
+          <a class="user-info-link">
+            <div class="user-info">
+              <i class="fas fa-user"></i>
+              <span>
+                <a routerLink="/sign-in" class="sign-in">Sign in</a>
+                <a routerLink="/sign-up" class="sign-up">Sign up</a>
+              </span>
+            </div>
+          </a>
+          <a routerLink="/cart-page">
+            <div class="user-cart">
+              <mat-icon
+                class="icon"
+                [matBadge]="numberItem"
+                matBadgeColor="warn"
+                matBadgeSize="medium"
+                >shopping_cart</mat-icon
+              >
+              <a routerLink="/cart-page">Cart</a>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+  
+    <section class="main-nav">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a routerLink="/categore-one" class="nav-link categore">
+                <i class="fas fa-list-ul"></i>Categories<i
+                  class="fas fa-angle-down"
+                ></i>
+              </a>
+              <ul class="list-unstyled sub-menu main-catego">
+                <li>
+                  <a routerLink="/categore-list" class="active-link"
+                    >Categore One</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/product-list">Features</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/product-list">Pricing</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/product-list">Features</a>
+            </li>
+  
+            <!-- this part show in media (max:767px and none in all media) -->
+            <div class="user-part">
+              <a class="user-info-link">
+                <div class="user-info">
+                  <i class="fas fa-user"></i>
+                  <span>
+                    <a routerLink="/sign-in" class="sign-in">Sign in</a>
+                    <a routerLink="/sign-up" class="sign-up">Sign up</a>
+                  </span>
+                </div>
+              </a>
+              <a routerLink="/cart-page">
+                <div class="user-cart">
+                  <mat-icon
+                    class="icon"
+                    [matBadge]="numberItem"
+                    matBadgeColor="warn"
+                    matBadgeSize="medium"
+                    >shopping_cart</mat-icon
+                  >
+                  <a routerLink="/cart-page">Cart</a>
+                </div>
+              </a>
+            </div>
+            <!-- this part show in media (max:767px and none in all media) -->
+          </ul>
+        </div>
+      </nav>
+    </section>
+  </div>
+  

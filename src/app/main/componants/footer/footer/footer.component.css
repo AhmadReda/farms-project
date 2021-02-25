@@ -1,0 +1,28 @@
+footer {
+    background: #445268;
+    color: #fff;
+    padding: 40px 0;
+  }
+  h4 {
+    position: relative;
+    margin: 0 0 0 13px;
+  }
+  h4::before {
+    position: absolute;
+    content: "";
+    width: 5px;
+    height: 21px;
+    background: #fff;
+    left: -15px;
+    top: 3px;
+  }
+  
+  ul li a {
+    display: inline-block;
+    margin: 10px 0;
+    color: #fff;
+  }
+  ul li a:hover {
+    text-decoration: underline !important;
+  }
+  

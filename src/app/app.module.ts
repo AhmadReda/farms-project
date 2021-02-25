@@ -7,45 +7,38 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ReactiveFormsModule } from '@angular/forms';
-
-/////////////////// import component module ///////////////////////
-import { ComponentsModule } from './components/components.module';
-
-///////////////////  pages import //////////////////////
-import { ViewProductDetailsComponent } from './pages/view-product-details/view-product-details.component';
-import { CartPageComponent } from './pages/cart-page/cart-page.component';
-import { SearchItemComponent } from './pages/search-item/search-item.component';
-///////////////////// lazy loade inports /////////////////////////////////
-import { CategoriesModule } from './lazy-route/categories/categories.module';
-import { RegisterPagesModule } from './lazy-route/register-pages/register-pages.module'
-import { PagesModule } from './lazy-route/pages/pages.module';
-
-
-
-
-
-
-import {MatBadgeModule} from '@angular/material/badge';
-
-
+// ////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////
+import { SharedModule } from './main/componants/shared/shared.module';
+import { ProductModule } from './main/componants/Product/product.module';
+import { HomeModule } from './main/componants/home/home.module';
+import { HeaderModule } from './main/componants/header/header.module';
+import { FooterModule } from './main/componants/footer/footer.module';
+import { CateguriesModule } from './main/componants/categories/categuries.module';
+import { CartPageModule } from './main/componants/cart-page/cart-page.module';
+import { AuthModule } from './Auth/auth.module';
+import { SearchModule } from './main/componants/search/search.module'
+// ////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////
 @NgModule({
   declarations: [
     AppComponent,
-    ViewProductDetailsComponent,
-    CartPageComponent,
-    SearchItemComponent,
   ],
   imports: [
-    MatBadgeModule,
+    SearchModule,
+    SharedModule,
+    ProductModule,
+    HomeModule,
+    HeaderModule,
+    FooterModule,
+    CateguriesModule,
+    CartPageModule,
+    AuthModule,
     ReactiveFormsModule,
-    RegisterPagesModule,
-    PagesModule,
     RouterModule,
     FormsModule,
     BrowserAnimationsModule,
     CarouselModule,
-    ComponentsModule,
-    CategoriesModule,
     BrowserModule,
     AppRoutingModule,
   ],

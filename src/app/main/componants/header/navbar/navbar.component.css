@@ -1,0 +1,295 @@
+/*////////////////////////////////////////////////////// top-navbar ///////////////////////////////////////////////////////////*/
+
+.top-nav {
+    display: flex;
+    align-items: center;
+    padding: 20px 30px;
+    background: #fff;
+    align-items: center;
+  }
+  .in-media {
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .logo {
+    width: 180px;
+  }
+  .logo img {
+    width: 100%;
+  }
+  .form-top-nav {
+    width: 75%;
+    background: #ddd;
+    border: 3px solid #ff6a00;
+  }
+  form {
+    display: flex;
+  }
+  form div {
+    position: relative;
+  }
+  form div i {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 15px;
+  }
+  .dropdown .btn-secondary {
+    background: #fff;
+    color: #333;
+    outline: none;
+    border: none;
+    border-right: 1px solid #a2a2a2;
+    border-radius: 20px 0px 0px 20px;
+    font-size: 14px;
+  }
+  .dropdown .btn-secondary:focus {
+    box-shadow: none;
+  }
+  input {
+    padding: 0px 15px;
+    flex-grow: 1;
+    border: none;
+    outline: none;
+  }
+  .search-btn {
+    padding: 0px 29px;
+    border: none;
+    outline: none;
+    background: #ff6a00;
+    color: #fff;
+    line-height: 30px;
+  }
+  .search-btn i {
+    margin-right: 10px;
+  }
+  .user-part {
+    display: flex;
+    align-items: center;
+  }
+  .user-info {
+    margin-right: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .user-info i,
+  .user-cart .icon {
+    margin-right: 5px;
+    color: #f16925;
+  }
+  .user-info i {
+    font-size: 25px;
+  }
+  .user-info span .sign-in {
+    display: block;
+  }
+  .user-info span .sign-in:hover,
+  .user-info span .sign-up:hover {
+    color: #f16925;
+  }
+  
+  .user-cart {
+    text-align: center;
+    font-size: 13px;
+  }
+  
+  .user-cart a,
+  .user-info a {
+    color: #333;
+    transition: all 0.4s ease;
+  }
+  
+  .user-cart:hover.user-cart a {
+    color: #ff6a00 !important;
+  }
+  
+  /********************* media-top-nav ********************************/
+  @media (max-width: 1024px) {
+    .top-nav {
+      display: block;
+    }
+    .logo {
+      margin: 20px auto;
+      width: 210px;
+    }
+  }
+  /********************* media-top-nav *********************************/
+  
+  /*//////////////////////////////////////////////// main-nav ////////////////////////////////////////////////////////////////*/
+  .navbar {
+    border-top: 1px solid #ddd;
+    box-shadow: 0px 3px 4px 0px #aaa;
+    background-color: green !important;
+  }
+  .navbar .navbar-nav .nav-item {
+    position: relative;
+  }
+  .navbar-toggler{
+    background: #fff;
+    border-color: #fff;
+  }
+  .navbar .navbar-nav .nav-item:hover .sub-menu {
+    top: 110%;
+    opacity: 1;
+    visibility: visible;
+  }
+  .navbar .navbar-nav .nav-item .main-catego li:hover a {
+    margin-left: 3px;
+    box-shadow: 0 0 5px 0px #ddd;
+  }
+  .navbar .navbar-nav .nav-item .main-catego {
+    border-radius: 0 !important;
+    padding: 10px 0;
+    z-index: 10;
+  }
+  .navbar .navbar-nav .nav-item .sub-menu {
+    top: 200%;
+    z-index: 10;
+    position: absolute;
+    width: 200px;
+    background: #fff;
+    opacity: 0;
+    visibility: hidden;
+    box-shadow: 0 0 3px 0px rgb(145 143 143);
+    border-radius: 9px;
+    transition: all 0.5s ease;
+    box-sizing: border-box;
+  }
+  .navbar .navbar-nav .nav-item .sub-menu li a {
+    text-decoration: none;
+    color: #000;
+    font-size: 13px;
+    padding: 10px;
+    transition: all 0.4s ease;
+    display: block;
+  }
+  .navbar .navbar-nav .nav-item .sub-menu li:hover a {
+    color: #ff6a00;
+  }
+  .navbar-light .navbar-nav .nav-link,
+  .navbar .user-lang li a {
+    display: inline-block;
+    padding: 5px 20px;
+    color: #fff;
+    font-size: 17px;
+    transition: all 0.4s ease;
+    position: relative;
+  }
+  .navbar-light .navbar-nav .nav-link:hover,
+  .navbar .user-lang li a:hover {
+    color: #ff6a00;
+  }
+  .navbar-light .navbar-nav .categore::after {
+    position: absolute;
+    content: "";
+    width: 1px;
+    height: 15px;
+    background: #a0a2ad;
+    right: -6px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .navbar-light .navbar-nav .categore .fa-list-ul {
+    position: absolute;
+    left: -5px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+  }
+  .navbar-light .navbar-nav .nav-link i {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 13px;
+    margin: 0px 5px;
+  }
+  .navbar .user-lang li {
+    display: inline-block !important;
+  }
+  .navbar .user-lang li:first-child {
+    position: relative;
+  }
+  .navbar .user-lang li:first-child::after {
+    position: absolute;
+    content: "";
+    width: 1px;
+    height: 17px;
+    background: #a0a2ad;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  /* media */
+  
+  @media (max-width: 767px) {
+    .in-media .user-part {
+      display: none;
+    }
+    .navbar-nav .user-part {
+      display: block;
+      margin-right: auto;
+    }
+    .navbar-nav{
+      padding: 20px 10px 0;
+    }
+    .navbar-nav .nav-item{
+      margin-bottom: 5px;
+    }
+    .navbar-nav .user-part .user-cart{
+      text-align: left !important;
+    }
+    .user-info a,
+    .user-cart a{
+      color: #fff !important;
+    }
+    .form-top-nav{
+      width: 90%;
+    }
+  }
+  
+  @media(max-width:475px){
+    .form-top-nav input{
+      width: 100px;
+    }
+    .form-top-nav .search-btn{
+      padding: 0 10px;
+    }
+    .form-top-nav .search-btn i{
+      display: none;
+    }
+  }
+  @media (min-width: 767px) {
+    .navbar-nav .user-part {
+      display: none;
+    }
+  
+  }
+  
+  @media (max-width: 991px) {
+    /* .navbar-nav {
+      position: absolute;
+      background: #333;
+      width: 300px;
+      height: 100vh;
+      z-index: 10;
+      top: -156px;
+      left: -10%;
+    } */
+  }
+  /* media */
+  
+  /* 
+    position: absolute;
+    background: #333;
+    width: 300px;
+    height: 100vh;
+    z-index: 10;
+    top: -204px;
+    left: 0; */
+  
