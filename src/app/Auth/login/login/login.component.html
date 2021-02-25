@@ -1,1 +1,55 @@
-<p>login works!</p>
+
+<div class="container my-5">
+    <form [formGroup]="signInForm">
+<!-- 
+      <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <input
+          type="email"
+          class="form-control"
+          id="exampleInputEmail1"
+          aria-describedby="emailHelp"
+          placeholder="Enter email"
+          name="emailField"
+          ngModel
+          required
+          email
+          #emailField = "ngModel"
+        />
+        <small class="form-text text-muted" *ngIf="emailField.touched && !emailField.valid">We'll never share your email with anyone else.</small>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          id="exampleInputPassword1"
+          placeholder="Password"
+          name="passwordFiled"
+          ngModel
+          required
+        />
+      </div>
+        <button type="submit" class="btn btn-primary" [disabled]="!signIn.valid">Submit</button> -->
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email address</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="emailAddress">
+          <span *ngIf="signInForm.controls.emailAddress.touched && signInForm.controls.emailAddress.hasError('required')">email is required</span>
+          <span *ngIf="signInForm.controls.emailAddress.touched && signInForm.controls.emailAddress.hasError('email')">Enter Valide Email</span>
+
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input type="password" class="form-control" id="exampleInputPassword1" formControlName="password">
+        </div>
+        <!-- <div class="form-group form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div> -->
+        <div class="buttons">
+            <button type="submit" class="btn btn-primary" [disabled]="!signInForm.valid">Submit</button>
+        <button type="submit" class="btn btn-primary" (click)="resetForm()">Reset</button>
+        </div>
+    </form>
+  </div>
+  

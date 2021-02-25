@@ -1,32 +1,62 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CartPageComponent } from './pages/cart-page/cart-page.component';
-
-import { SearchItemComponent } from './pages/search-item/search-item.component';
-// import { SigninComponent } from './pages/signin/signin.component';
-// import { SignupComponent } from './pages/signup/signup.component';
-import { ViewProductDetailsComponent } from './pages/view-product-details/view-product-details.component';
 
 const routes: Routes = [
-  // { path: 'sign-in', component: SigninComponent },
-  // { path: 'sign-up', component: SignupComponent },
-  { path: 'view-product-details/:id', component: ViewProductDetailsComponent },
-  { path: 'cart-page', component: CartPageComponent },
-  { path: 'search-item', component: SearchItemComponent },
-
+  {
+    path:'Auth',
+    loadChildren: () =>
+    import('./Auth/auth.module').then(
+      (m) => m.AuthModule
+    )
+  },
   {
     path: 'categories',
     loadChildren: () =>
-      import('./lazy-route/categories/categories.module').then(
-        (m) => m.CategoriesModule
+      import('./main/componants/categories/categuries.module').then(
+        (m) => m.CateguriesModule
       ),
   },
   {
-    path: 'pages',
+    path: 'home',
     loadChildren: () =>
-      import('./lazy-route/pages/pages.module').then((m) => m.PagesModule),
+      import('./main/componants/home/home.module').then((m) => m.HomeModule),
   },
-  { path: 'register-pages', loadChildren: () => import('./lazy-route/register-pages/register-pages.module').then(m => m.RegisterPagesModule) },
+  {
+    path: 'product',
+    loadChildren: () =>
+      import('./main/componants/Product/product.module').then(
+        (m) => m.ProductModule
+      ),
+  },
+  {
+    path: 'cart-page',
+    loadChildren: () =>
+      import('./main/componants/cart-page/cart-page.module').then(
+        (m) => m.CartPageModule
+      ),
+  },
+  {
+    path: 'header',
+    loadChildren: () =>
+      import('./main/componants/header/header.module').then(
+        (m) => m.HeaderModule
+      ),
+  },
+  {
+    path: 'footer',
+    loadChildren: () =>
+      import('./main/componants/footer/footer.module').then(
+        (m) => m.FooterModule
+      ),
+  },
+  {
+    path: 'shared',
+    loadChildren: () =>
+      import('./main/componants/shared/shared.module').then(
+        (m) => m.SharedModule
+      ),
+  },
+  { path: 'search', loadChildren: () => import('./main/componants/search/search.module').then(m => m.SearchModule) },
 ];
 
 @NgModule({
