@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductListComponent implements OnInit {
 
+  loadingError = false;
+  loading = false;
+  Error = 'Error'
+
   constructor() { }
 
   ngOnInit(): void {
@@ -135,4 +139,5 @@ export class ProductListComponent implements OnInit {
   ];
   ///////////////////////// data bind to <app-slide-show-items> and input on it////////////////////////////
 
+  getData(){}
 }

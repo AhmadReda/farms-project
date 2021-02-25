@@ -17,7 +17,8 @@ import { FooterModule } from './main/componants/footer/footer.module';
 import { CateguriesModule } from './main/componants/categories/categuries.module';
 import { CartPageModule } from './main/componants/cart-page/cart-page.module';
 import { AuthModule } from './Auth/auth.module';
-import { SearchModule } from './main/componants/search/search.module'
+import { SearchModule } from './main/componants/search/search.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 // ////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////
 @NgModule({
@@ -41,6 +42,7 @@ import { SearchModule } from './main/componants/search/search.module'
     CarouselModule,
     BrowserModule,
     AppRoutingModule,
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

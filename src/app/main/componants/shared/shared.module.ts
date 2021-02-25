@@ -9,9 +9,10 @@ import { PartItemsComponent } from './part-items/part-items.component';
 import { SlideShowItemsComponent } from './slide-show-items/slide-show-items.component';
 import { NgxPaginationModule } from 'ngx-pagination'
 import { CarouselModule } from 'ngx-owl-carousel-o';
-import { CartPageModule } from '../cart-page/cart-page.module'
+import { CartPageModule } from '../cart-page/cart-page.module';
+import { LoaderComponent } from '../loader/loader.component';
 @NgModule({
-  declarations: [SharedComponent, ItemsForYouComponent, MediaSlideComponent, PartItemsComponent, SlideShowItemsComponent],
+  declarations: [SharedComponent, ItemsForYouComponent, MediaSlideComponent, PartItemsComponent, SlideShowItemsComponent, LoaderComponent],
   imports: [
     CartPageModule,
     CarouselModule,
@@ -19,6 +20,6 @@ import { CartPageModule } from '../cart-page/cart-page.module'
     CommonModule,
     SharedRoutingModule
   ]
-  ,exports:[ ItemsForYouComponent, MediaSlideComponent, PartItemsComponent, SlideShowItemsComponent]
+  ,exports:[ ItemsForYouComponent, MediaSlideComponent, PartItemsComponent, SlideShowItemsComponent, LoaderComponent]
 })
 export class SharedModule { }
