@@ -9,8 +9,9 @@ export class ApiInterceptor implements HttpInterceptor {
   }
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    const token = localStorage.getItem('token') || '';
-    if (!token) {
+    debugger
+    const token = true
+    if (token) {
       const requestWithAuth = request.clone({
         headers: request.headers
           .set('Authorization', 'token 77c862f6deea7a8:c5630d3fa46796a')
