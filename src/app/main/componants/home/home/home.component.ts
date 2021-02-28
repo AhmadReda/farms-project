@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { HomeService } from 'src/app/services/home.service';
 
 @Component({
   selector: 'app-home',
@@ -8,10 +9,25 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private homeDataService: HomeService,
+
+  ) { }
 
   ngOnInit(): void {
+    this.getHomePageData()
   }
+
+  getHomePageData() {
+    this.homeDataService.getHomePageData().subscribe(
+      (response: any) => {
+       console.log(response);
+
+      },
+      (error) => { }
+    );
+  }
+
 
     /////////////////// customiz owl carousel //////////////////
     customOptions: OwlOptions = {
@@ -39,7 +55,7 @@ export class HomeComponent implements OnInit {
       nav: true,
     };
     /////////////////// customiz owl carousel //////////////////
-  
+
     ////////////////// data for owl slide carousel bind to <app-slide-ahow-items> ////////////////////////////
     owlSlideOne = [
       {
@@ -74,7 +90,7 @@ export class HomeComponent implements OnInit {
       },
     ];
     ////////////////// data for owl slide carousel bind to <app-slide-ahow-items> ////////////////////////////
-  
+
     ////////////////////// this data is bind to <app-part-items> and input in it //////////////////
     partItemsSection = [
       {
@@ -93,8 +109,8 @@ export class HomeComponent implements OnInit {
       },
     ];
     ////////////////////// this data is bind to <app-part-items> and input in it //////////////////
-  
-  
+
+
     ////////////////////// this data is bind to <app-items-for-you> and input in it //////////////////
     allItems = [
       {
@@ -179,5 +195,6 @@ export class HomeComponent implements OnInit {
       },
     ];
     ////////////////////// this data is bind to <app-items-for-you> and input in it //////////////////
-  
+
+
 }

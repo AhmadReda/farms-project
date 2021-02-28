@@ -19,6 +19,8 @@ import { CartPageModule } from './main/componants/cart-page/cart-page.module';
 import { AuthModule } from './Auth/auth.module';
 import { SearchModule } from './main/componants/search/search.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
+import { HttpClientModule } from '@angular/common/http';
+import { ApiInterceptorProvider } from './interceptors/api.interceptor';
 // ////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////
 @NgModule({
@@ -43,8 +45,11 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
     BrowserModule,
     AppRoutingModule,
     NgbModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    ApiInterceptorProvider,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -5,6 +5,7 @@
 export const environment = {
   production: false
 };
+export const baseUrl = 'http://41.38.70.8:9090/api/method/';
 
 /*
  * For easier debugging in development mode, you can import the following file
