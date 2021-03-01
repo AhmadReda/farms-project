@@ -9,7 +9,6 @@ export class ApiInterceptor implements HttpInterceptor {
   }
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    debugger
     const token = true
     if (token) {
       const requestWithAuth = request.clone({
@@ -17,8 +16,6 @@ export class ApiInterceptor implements HttpInterceptor {
           .set('Authorization', 'token 77c862f6deea7a8:c5630d3fa46796a')
           .set('Accept', '*/*')
       });
-      console.log(requestWithAuth);
-
       return next.handle(requestWithAuth);
     } else {
       const requestWithAuth = request.clone({
