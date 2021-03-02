@@ -48,6 +48,7 @@
   .show-market .show-market-list li {
     margin: 0px 0px 9px 5px;
     z-index: 110;
+    direction: ltr;
   }
   .show-market .show-market-list > li:hover {
     box-shadow: 0 0 1px 0px #aaa;

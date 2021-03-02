@@ -39,7 +39,7 @@ export class MediaSlideComponent implements OnInit {
     mouseDrag: true,
     touchDrag: false,
     pullDrag: false,
-    // autoplay:true,
+    autoplay:true,    
     dots: false,
     navSpeed: 700,
     navText: ['', ''],

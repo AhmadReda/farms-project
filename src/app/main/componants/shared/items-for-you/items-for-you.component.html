@@ -1,35 +1,49 @@
 <div class="part-title">
-    <span>Lorem, ipsum dolor.</span>
-    <span></span>
-  </div>
-  
-  <div class="items-for-you">
-    <div class="row">
-      <div class="col-lg-3 col-sm-6" *ngFor="let item of items |paginate: { itemsPerPage: itemsPerPage, currentPage: currenpg }">
+  <span>Lorem, ipsum dolor.</span>
+  <span></span>
+</div>
+
+<div class="items-for-you">
+  <div class="row">
+    <div
+      class="col-lg-3 col-sm-6"
+      *ngFor="
+        let item of items
+          | paginate: { itemsPerPage: itemsPerPage, currentPage: currenpg }
+      "
+    >
+      <a routerLink="/view-product-details/10">
         <div class="item-look">
           <div class="item-look-img">
             <a routerLink="/view-product-details/10">
-              <img src="{{ item.img }}" class="img-fluid" />
+              <img *ngIf="item.image;else placehold" src="{{item.image}}" alt="image">
+              <ng-template #placehold>
+                <img src="https://via.placeholder.com/150" class="img-fluid"/>
+              </ng-template>
             </a>
           </div>
           <div class="item-look-desc">
-            <a routerLink="/view-product-details/10">{{ item.link }}</a>
-            <h6>
-              {{ item.priceFrom }} - {{ item.priceTo }} /
-              <span>{{ item.type }}</span>
-            </h6>
-            <p>{{ item.quant }} {{ item.type }} (MIN.Order)</p>
+            <div>
+              <a routerLink="/view-product-details/10">
+                Name: {{ item.item_name }}
+              </a>
+              <span>Group: {{ item.item_group }}</span>
+              <span>Code: {{ item.item_code }}</span>
+            </div>
+            <div class="cart-btn">
+              <span><i class="fas fa-cart-plus"></i></span>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-    <div class="buttons-controls">
-      <pagination-controls (pageChange)="currenpg = $event"></pagination-controls>
-      <div class="item-number">
-        <button (click)="dec()"><i class="fas fa-minus"></i></button>
-        <input type="text" [value]="itemsPerPage" disabled>
-        <button (click)="inc()"><i class="fas fa-plus"></i></button>
-      </div>
+      </a>
     </div>
   </div>
-  
+  <div class="buttons-controls">
+    <pagination-controls (pageChange)="currenpg = $event"></pagination-controls>
+    <div class="item-number">
+      <button (click)="dec()"><i class="fas fa-minus"></i></button>
+      <input type="text" [value]="itemsPerPage" disabled />
+      <button (click)="inc()"><i class="fas fa-plus"></i></button>
+    </div>
+  </div>
+</div>
