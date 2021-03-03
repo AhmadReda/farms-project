@@ -9,6 +9,7 @@ import { HomeService } from 'src/app/services/home.service';
 })
 export class HomeComponent implements OnInit {
 
+  items=[]
   constructor(
     private homeDataService: HomeService,
 
@@ -21,8 +22,19 @@ export class HomeComponent implements OnInit {
   getHomePageData() {
     this.homeDataService.getHomePageData().subscribe(
       (response: any) => {
-       console.log(response);
+      
 
+      /////////////////  advertisements ///////////////////
+      this.advertisements = response.message.advertisements;
+      /////////////////  advertisements ///////////////////
+
+      //////////////// category api ////////////////
+      this.categoryItems = response.message.categroies;
+    
+      //////////////// category api ////////////////
+      ////////////////////////// cart item list from api //////////////////////
+      this.allItems = response.message.items
+      ////////////////////////// cart item list from api //////////////////////
       },
       (error) => { }
     );
@@ -35,6 +47,7 @@ export class HomeComponent implements OnInit {
       mouseDrag: true,
       touchDrag: false,
       pullDrag: false,
+      autoplay:true,
       dots: false,
       navSpeed: 700,
       navText: ['', ''],
@@ -56,6 +69,11 @@ export class HomeComponent implements OnInit {
     };
     /////////////////// customiz owl carousel //////////////////
 
+
+
+    categoryItems:any = [];
+    subCategoryItems:any = [];
+    advertisements:any = [];
     ////////////////// data for owl slide carousel bind to <app-slide-ahow-items> ////////////////////////////
     owlSlideOne = [
       {
@@ -112,88 +130,8 @@ export class HomeComponent implements OnInit {
 
 
     ////////////////////// this data is bind to <app-items-for-you> and input in it //////////////////
-    allItems = [
-      {
-        img: 'assets/images/pick.jpg',
-        link: 'Lorem ipsum dolor sit amet consectetur.',
-        priceFrom: '$100.00',
-        priceTo: '$200.00',
-        type: 'Pair',
-        quant: '10',
-      },
-      {
-        img: 'assets/images/pick.jpg',
-        link: 'Lorem ipsum dolor sit amet consectetur.',
-        priceFrom: '$100.00',
-        priceTo: '$200.00',
-        type: 'Pair',
-        quant: '10',
-      },
-      {
-        img: 'assets/images/pick.jpg',
-        link: 'Lorem ipsum dolor sit amet consectetur.',
-        priceFrom: '$100.00',
-        priceTo: '$200.00',
-        type: 'Pair',
-        quant: '10',
-      },
-      {
-        img: 'assets/images/pick.jpg',
-        link: 'Lorem ipsum dolor sit amet consectetur.',
-        priceFrom: '$100.00',
-        priceTo: '$200.00',
-        type: 'Pair',
-        quant: '10',
-      },
-      {
-        img: 'assets/images/pick.jpg',
-        link: 'Lorem ipsum dolor sit amet consectetur.',
-        priceFrom: '$100.00',
-        priceTo: '$200.00',
-        type: 'Pair',
-        quant: '10',
-      },
-      {
-        img: 'assets/images/pick.jpg',
-        link: 'Lorem ipsum dolor sit amet consectetur.',
-        priceFrom: '$100.00',
-        priceTo: '$200.00',
-        type: 'Pair',
-        quant: '10',
-      },
-      {
-        img: 'assets/images/pick.jpg',
-        link: 'Lorem ipsum dolor sit amet consectetur.',
-        priceFrom: '$100.00',
-        priceTo: '$200.00',
-        type: 'Pair',
-        quant: '10',
-      },
-      {
-        img: 'assets/images/pick.jpg',
-        link: 'Lorem ipsum dolor sit amet consectetur.',
-        priceFrom: '$100.00',
-        priceTo: '$200.00',
-        type: 'Pair',
-        quant: '10',
-      },
-      {
-        img: 'assets/images/pick.jpg',
-        link: 'Lorem ipsum dolor sit amet consectetur.',
-        priceFrom: '$100.00',
-        priceTo: '$200.00',
-        type: 'Pair',
-        quant: '10',
-      },
-      {
-        img: 'assets/images/pick.jpg',
-        link: 'Lorem ipsum dolor sit amet consectetur.',
-        priceFrom: '$100.00',
-        priceTo: '$200.00',
-        type: 'Pair',
-        quant: '10',
-      },
-    ];
+
+    allItems = [];
     ////////////////////// this data is bind to <app-items-for-you> and input in it //////////////////
 
 
