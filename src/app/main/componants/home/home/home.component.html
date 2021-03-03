@@ -14,8 +14,8 @@
                       item.mainCategroy
                     }}<i class="fas fa-chevron-right"></i
                   ></a>
-                  <ul class="list-unstyled market-sub-menu" >
-                    <li *ngFor="let subItem of categoryItems.subCategroy">
+                  <ul class="list-unstyled market-sub-menu" *ngIf="item.subCategroy.length > 0">
+                    <li *ngFor="let subItem of item.subCategroy">
                       <a href="#">{{subItem.item_group_name}}</a>
                     </li>
                   </ul>

@@ -9,7 +9,6 @@ import { HomeService } from 'src/app/services/home.service';
 })
 export class HomeComponent implements OnInit {
 
-  items=[]
   constructor(
     private homeDataService: HomeService,
 
@@ -22,7 +21,7 @@ export class HomeComponent implements OnInit {
   getHomePageData() {
     this.homeDataService.getHomePageData().subscribe(
       (response: any) => {
-      
+
 
       /////////////////  advertisements ///////////////////
       this.advertisements = response.message.advertisements;
@@ -30,7 +29,7 @@ export class HomeComponent implements OnInit {
 
       //////////////// category api ////////////////
       this.categoryItems = response.message.categroies;
-    
+
       //////////////// category api ////////////////
       ////////////////////////// cart item list from api //////////////////////
       this.allItems = response.message.items
