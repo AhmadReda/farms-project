@@ -7,6 +7,8 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root',
 })
 export class CartServiceService {
+  numbers = new BehaviorSubject(null);
+
   private subject = new BehaviorSubject<any>(CartServiceService.list);
   private subjectTwo = new BehaviorSubject<any>(CartServiceService.itemNumber);
   static list: any;
