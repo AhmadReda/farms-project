@@ -1,100 +1,95 @@
-<div class="container my-5" *ngFor="let item of overview">
-
-
-    <!-- main product div to show some data for this product -->
-    <div class="main-product-info">
-      <div class="row">
-        <div class="col-lg-5">
-          <div class="produxt-img">
-            <img src="{{item.productImg}}" class="img-fluid" />
-          </div>
+<div class="container my-5" *ngFor="let item of overview; index as i">
+  <!-- main product div to show some data for this product -->
+  <div class="main-product-info">
+    <div class="row">
+      <div class="col-lg-5">
+        <div class="main-product-img">
+          <img
+            *ngIf="item[i].image; else placehold"
+            src="{{ item[i].image }}"
+            class="img-fluid"
+          />
+          <ng-template #placehold>
+            <img src="https://via.placeholder.com/150" class="img-fluid" />
+          </ng-template>
         </div>
-        <div class="col-lg-7">
-          <div class="product-info">
-            <p>
-             {{item.productTitle}}
-            </p>
-            <div class="rate">rate</div>
-            <h4>
-              {{item.priceFrom}} - {{item.priceTo}}<span>/ Box |</span>
-              <p>152 Box/Boxes<span>(Min. Order)</span></p>
-            </h4>
-            <div class="quantity">
-              <span>Quantity : </span>
-              <div class="btn-quant">
-                <button (click)="minus()"><i class="fas fa-minus"></i></button>
-                <input type="text" [(ngModel)]="quantity" />
-                <button (click)="pluse()" #icon><i class="fas fa-plus"></i></button>
-              </div>
+      </div>
+      <div class="col-lg-7">
+        <div class="product-info">
+          <div class="description">Description: {{ item[i].description }}</div>
+         <div class="main-details">
+          <span> Code: {{ item[i].item_code }} </span>
+          <span> Group: {{ item[i].item_group }} </span>
+          <span> Name: {{ item[i].item_name }} </span>
+          <span>
+            Price: {{ item[i].valuation_rate }} {{ item[i].currency }}
+          </span>
+         </div>
+
+          <div class="quantity">
+            <span>Quantity : </span>
+            <div class="btn-quant">
+              <button (click)="minus()"><i class="fas fa-minus"></i></button>
+              <input type="text" [(ngModel)]="quantity" />
+              <button (click)="pluse()" #icon>
+                <i class="fas fa-plus"></i>
+              </button>
             </div>
-            <button class="add-cart" (click)="addHandly(item)" #cart>Add To Cart</button>
           </div>
+          <button class="add-cart" (click)="addHandly(item)" #cart>
+            Add To Cart
+          </button>
         </div>
       </div>
     </div>
-    <!-- main product div to show some data for this product -->
-  
-  
-    <!-- product-overview to show more data for this product -->
-  
-    <div class="product-overview mt-4">
-      <h4>Overview</h4>
-      <h6>Quick Details</h6>
-      <div class="row">
-        <div class="col-lg-6">
-          <ul class="list-unstyled">
-            <li>
-              <span>style : </span>
-              <span>{{item.style}}</span>
-            </li>
-            <li>
-              <span>type : </span>
-              <span>{{item.type}}</span>
-            </li>
-            <li>
-              <span>ProductType : </span>
-              <span>{{item.ProductType}}</span>
-            </li>
-            <li>
-              <span>PlaceOfOrigin : </span>
-              <span>{{item.PlaceOfOrigin}}</span>
-            </li>
-          
-          </ul>
-        </div>
-        <div class="col-lg-6">
-          <ul class="list-unstyled">
-            <li>
-              <span>color : </span>
-              <span>{{item.Color}}</span>
-            </li>
-            <li>
-              <span>CultivationType : </span>
-              <span>{{item.CultivationType}}</span>
-            </li>
-            <li>
-              <span>BrandName :</span>
-              <span>{{item.BrandName}}</span>
-            </li>
-            
-          </ul>
-        </div>
+  </div>
+  <!-- main product div to show some data for this product -->
+
+  <!-- product-overview to show more data for this product -->
+
+  <div class="product-overview mt-4">
+    <h4>Overview</h4>
+    <h6>Quick Details</h6>
+    <div class="row">
+      <div class="col-lg-6">
+        <ul class="list-unstyled">
+          <li>
+            <span>style : </span>
+            <span>Fresh</span>
+          </li>
+          <li>
+            <span>type : </span>
+            <span>Strawberry</span>
+          </li>
+        </ul>
       </div>
-      <div class="product-image text-center">
+      <div class="col-lg-6">
+        <ul class="list-unstyled">
+          <li>
+            <span>color : </span>
+            <span>Red</span>
+          </li>
+
+          <li>
+            <span>BrandName :</span>
+            <span>Golden Fruit</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="product-image text-center">
       <div class="slide">
         <owl-carousel-o [options]="customOption">
-            <ng-template carouselSlide *ngFor="let slide of mediaSlide">
-              <a href="#">
-                <div class="product-img-slide">
-                  <img src="{{ slide.img}}" />
-                </div>
-              </a>
-            </ng-template>
-          </owl-carousel-o>
-    </div>
+          <ng-template carouselSlide *ngFor="let slide of mediaSlide">
+            <a href="#">
+              <div class="product-img-slide">
+                <img src="{{ slide.img }}" />
+              </div>
+            </a>
+          </ng-template>
+        </owl-carousel-o>
       </div>
     </div>
-    <!-- product-overview to show more data for this product -->
-  
   </div>
-  
+  <!-- product-overview to show more data for this product -->
+</div>

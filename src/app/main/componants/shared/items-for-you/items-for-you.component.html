@@ -12,10 +12,10 @@
           | paginate: { itemsPerPage: itemsPerPage, currentPage: currenpg }
       "
     >
-      <a routerLink="/view-product-details/10">
+      <a routerLink="/view-product-details/{{item.name}}">
         <div class="item-look">
           <div class="item-look-img">
-            <a routerLink="/view-product-details/10">
+            <a routerLink="/view-product-details/{{item.name}}">
               <img *ngIf="item.image;else placehold" src="{{item.image}}" alt="image">
               <ng-template #placehold>
                 <img src="https://via.placeholder.com/150" class="img-fluid"/>
@@ -24,7 +24,7 @@
           </div>
           <div class="item-look-desc">
             <div>
-              <a routerLink="/view-product-details/10">
+              <a routerLink="/view-product-details/{{item.name}}">
                 Name: {{ item.item_name }}
               </a>
               <span>Code: {{ item.item_code }}</span>

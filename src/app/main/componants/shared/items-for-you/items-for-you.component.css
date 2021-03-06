@@ -25,11 +25,8 @@
     margin-bottom: 20px;
     border-radius: 5px;
     border-radius: 10px;
+    height: 420px;
   }
-  
-  /* .item-look:hover .item-look-desc a {
-    text-decoration: underline !important;
-  } */
   .item-look .item-look-img{
     width: 100%;
     height: 200px;
@@ -48,6 +45,7 @@
 
   .item-look-desc div span{
     display: block;
+    margin-bottom: 5px;
   }
   .item-look-desc hr{
     margin: 10px 0;

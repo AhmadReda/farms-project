@@ -9,8 +9,9 @@ import { Component, OnInit } from '@angular/core';
 export class ItemsForYouComponent implements OnInit {
 
   @Input() items:any;
+  @Input() itemsPerPage!: number;
   currenpg:number = 1;
-  itemsPerPage:number = 4;
+  // itemsPerPage:number = 4;
   constructor() { }
 
   ngOnInit(): void {

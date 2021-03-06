@@ -1,43 +1,42 @@
 import { Component, OnInit } from '@angular/core';
 import { CartServiceService } from '../../../../services/cart-service.service';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { ProductListService } from 'src/app/services/product-list.service';
+import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-view-product-details',
   templateUrl: './view-product-details.component.html',
-  styleUrls: ['./view-product-details.component.css']
+  styleUrls: ['./view-product-details.component.css'],
 })
 export class ViewProductDetailsComponent implements OnInit {
-
   quantity: number = 0;
   addToCart: any = [];
 
   //////////////////// this data is used in this component ////////////////////////////
-  overview = [
-    {
-      productTitle:
-        'Top Quality Fresh Berries Fruits Eco Friendly Packages Korean Delicious Sweet Golden Strawberry',
-      priceFrom: '$11.10',
-      priceTo: '$33.60',
-      productImg: 'assets/images/product-img.jpg',
-      style: 'Fresh',
-      type: 'Strawberry',
-      PlaceOfOrigin: 'South Korea',
-      Color: 'Red',
-      ProductType: 'Berries',
-      CultivationType: 'COMMON',
-      BrandName: 'Golden Fruit',
-      imgPanarOne: 'assets/images/product-img.jpg',
-      // imgPanarTwo:"assets/images/slide1.jpg",
-      // imgPanarThree:"assets/images/slide2.jpg",
-    },
-  ];
+  overview:any = [];
 
-  constructor(private msg: CartServiceService) { }
-
-  ngOnInit(): void {
+  product:any= {};
+  routeParam:any;
+  constructor(
+    private msg: CartServiceService,
+    private productList: ProductListService,
+    private activatedRoute: ActivatedRoute
+  ) {
+    this.activatedRoute.params.subscribe((data) => {
+      this.routeParam = data['name'];
+      console.log(this.routeParam);
+    });
   }
 
+  ngOnInit(): void {
+    this.getProductDetails();
+  }
 
+  getProductDetails(){
+    this.productList.getProductDetails(this.routeParam).subscribe(data =>{
+      this.overview.push(data.message);
+    })
+  }
   mediaSlide = [
     {
       id: 1,
