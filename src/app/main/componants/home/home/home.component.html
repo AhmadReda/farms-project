@@ -9,7 +9,7 @@
               <ul class="list-unstyled show-market-list">
                 <h6>MY MARKETS</h6>
                 <li *ngFor="let item of categoryItems">
-                  <a href="javascript:void(0)"
+                  <a href="/categore-list/{{item.mainCategroy}}"
                     ><img src="../../../assets/images/T-image.jpg" />{{
                       item.mainCategroy
                     }}<i class="fas fa-chevron-right"></i
@@ -20,111 +20,8 @@
                     </li>
                   </ul>
                 </li>
-                <!-- <li>
-                    <a href="javascript:void(0)"
-                      ><img src="../../../assets/images/T-image.jpg" />Item 2<i
-                        class="fas fa-chevron-right"
-                      ></i
-                    ></a>
-                    <ul class="list-unstyled market-sub-menu">
-                      <li><a href="#">home</a></li>
-                      <li><a href="#">home</a></li>
-                      <li><a href="#">home</a></li>
-                      <li><a href="#">home</a></li>
-                      <li><a href="#">home</a></li>
-                      <li><a href="#">home</a></li>
-                    </ul>
-                  </li>
-                  <li>
-                    <a href="javascript:void(0)"
-                      ><img src="../../../assets/images/T-image.jpg" />Item 3<i
-                        class="fas fa-chevron-right"
-                      ></i
-                    ></a>
-                    <ul class="list-unstyled market-sub-menu">
-                      <li><a href="#">home</a></li>
-                      <li><a href="#">home</a></li>
-                      <li><a href="#">home</a></li>
-                      <li><a href="#">home</a></li>
-                      <li><a href="#">home</a></li>
-                      <li><a href="#">home</a></li>
-                    </ul>
-                  </li>
-                  <li>
-                    <a href="javascript:void(0)"
-                      ><img src="../../../assets/images/T-image.jpg" />Item 4<i
-                        class="fas fa-chevron-right"
-                      ></i
-                    ></a>
-                    <ul class="list-unstyled market-sub-menu">
-                      <li><a href="#">home</a></li>
-                      <li><a href="#">home</a></li>
-                      <li><a href="#">home</a></li>
-                      <li><a href="#">home</a></li>
-                      <li><a href="#">home</a></li>
-                      <li><a href="#">home</a></li>
-                    </ul>
-                  </li>
-                  <li>
-                    <a href="javascript:void(0)"
-                      ><img src="../../../assets/images/T-image.jpg" />Item 5<i
-                        class="fas fa-chevron-right"
-                      ></i
-                    ></a>
-                    <ul class="list-unstyled market-sub-menu">
-                      <li><a href="#">home</a></li>
-                      <li><a href="#">home</a></li>
-                      <li><a href="#">home</a></li>
-                      <li><a href="#">home</a></li>
-                      <li><a href="#">home</a></li>
-                      <li><a href="#">home</a></li>
-                    </ul>
-                  </li>
-                  <li>
-                    <a href="javascript:void(0)"
-                      ><img src="../../../assets/images/T-image.jpg" />Item 6<i
-                        class="fas fa-chevron-right"
-                      ></i
-                    ></a>
-                    <ul class="list-unstyled market-sub-menu">
-                      <li><a href="#">home</a></li>
-                      <li><a href="#">home</a></li>
-                      <li><a href="#">home</a></li>
-                      <li><a href="#">home</a></li>
-                      <li><a href="#">home</a></li>
-                      <li><a href="#">home</a></li>
-                    </ul>
-                  </li>
-                  <li>
-                    <a href="javascript:void(0)"
-                      ><img src="../../../assets/images/T-image.jpg" />Item 7<i
-                        class="fas fa-chevron-right"
-                      ></i
-                    ></a>
-                    <ul class="list-unstyled market-sub-menu">
-                      <li><a href="#">home</a></li>
-                      <li><a href="#">home</a></li>
-                      <li><a href="#">home</a></li>
-                      <li><a href="#">home</a></li>
-                      <li><a href="#">home</a></li>
-                      <li><a href="#">home</a></li>
-                    </ul>
-                  </li>
-                  <li>
-                    <a href="javascript:void(0)"
-                      ><img src="../../../assets/images/T-image.jpg" />Item 8<i
-                        class="fas fa-chevron-right"
-                      ></i
-                    ></a>
-                    <ul class="list-unstyled market-sub-menu">
-                      <li><a href="#">home</a></li>
-                      <li><a href="#">home</a></li>
-                      <li><a href="#">home</a></li>
-                      <li><a href="#">home</a></li>
-                      <li><a href="#">home</a></li>
-                      <li><a href="#">home</a></li>
-                    </ul>
-                  </li> -->
+               
+               
               </ul>
             </div>
             <!----------------------- this hidden from 767px ------------------>
@@ -195,8 +92,9 @@
               >
                 <div class="carousel-inner">
                   <div
-                    class="carousel-item active"
-                    *ngFor="let advertisement of advertisements"
+                    class="carousel-item"
+                    *ngFor="let advertisement of advertisements; index as i"
+                    [ngClass]="{'active': i == 0 }"
                   >
                     <img
                       class="d-block w-100"
@@ -270,5 +168,5 @@
 
   <app-part-items [partItems]="partItemsSection"></app-part-items>
   <app-part-items [partItems]="partItemsSection"></app-part-items>
-  <app-items-for-you [items]="allItems"></app-items-for-you>
+  <app-items-for-you [items]="allItems" [itemsPerPage]="itemsPerPage"></app-items-for-you>
 </div>

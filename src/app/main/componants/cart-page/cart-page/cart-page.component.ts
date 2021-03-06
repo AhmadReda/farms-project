@@ -15,10 +15,13 @@ export class CartPageComponent implements OnInit {
         this.productSend.push(data);
       }
     });
-
     if (this.productSend != undefined) {
       this.msg.sendNum(this.productSend.length);
     }
+
+
+    this.msg.numbers.next(this.productSend.length);
+
   }
 
   ngOnInit(): void {}

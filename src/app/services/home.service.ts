@@ -14,3 +14,5 @@ export class HomeService {
     return this.http.get(baseUrl + `erpnext.stock.doctype.item.item.getFarmMain`);
   }
 }
+
+// http://41.38.70.8:9090/api/method/erpnext.stock.doctype.item.item.getItemsByCategory?category=

@@ -10,7 +10,7 @@ export class ProductListComponent implements OnInit {
   loadingError = false;
   loading = false;
   Error = 'Error'
-
+  itemsPerPage:number = 4;
   constructor() { }
 
   ngOnInit(): void {

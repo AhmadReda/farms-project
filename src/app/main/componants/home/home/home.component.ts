@@ -8,7 +8,7 @@ import { HomeService } from 'src/app/services/home.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
+  itemsPerPage:number = 4;
   constructor(
     private homeDataService: HomeService,
 
@@ -21,8 +21,6 @@ export class HomeComponent implements OnInit {
   getHomePageData() {
     this.homeDataService.getHomePageData().subscribe(
       (response: any) => {
-
-
       /////////////////  advertisements ///////////////////
       this.advertisements = response.message.advertisements;
       /////////////////  advertisements ///////////////////
